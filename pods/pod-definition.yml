@@ -1,0 +1,18 @@
+#kind: apiVersions
+# POD = v1
+# Service = v1
+# ReplicaSet = apps/v1
+#Deployment = apps/v1
+apiVersion: v1 #root level required, string
+kind: Pod #root level required. string
+metadata: #root level required
+  name: myapp-pod
+  labels: #dic key:value
+      app: myapp
+      type: front-end
+spec: #root level required, is a dict
+  containers:
+    - name: nginx-container # first item
+      image: nginx
+# kubectl create -f pod-definition.yaml
+# kubectl describe pod myapp-pod
